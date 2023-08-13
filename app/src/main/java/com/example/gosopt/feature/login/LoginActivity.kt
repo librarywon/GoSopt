@@ -3,7 +3,6 @@ package com.example.gosopt.feature.login
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gosopt.R
 import com.example.gosopt.databinding.ActivityLoginBinding
 import com.example.gosopt.feature.signup.SignupActivity
 

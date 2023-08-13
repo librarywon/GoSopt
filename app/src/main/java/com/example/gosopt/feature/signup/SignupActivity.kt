@@ -26,6 +26,8 @@ class SignupActivity : AppCompatActivity() {
                 if(viewModel.checkId(id) and viewModel.checkPw(pw)) {
                     toast("회원가입 완료")
                     val intent = Intent(this@SignupActivity, LoginActivity::class.java)
+                    intent.putExtra("id",id)
+                    intent.putExtra("pw",pw)
                     startActivity(intent)
                 }
                 else {
