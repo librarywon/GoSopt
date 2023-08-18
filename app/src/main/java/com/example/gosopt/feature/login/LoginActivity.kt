@@ -8,6 +8,7 @@ import com.example.gosopt.data.User
 import com.example.gosopt.databinding.ActivityLoginBinding
 import com.example.gosopt.feature.home.HomeActivity
 import com.example.gosopt.feature.signup.SignupActivity
+import com.example.gosopt.util.hideKeyboard
 import com.example.gosopt.util.toast
 
 class LoginActivity : AppCompatActivity() {
@@ -47,6 +48,9 @@ class LoginActivity : AppCompatActivity() {
     }
     private fun setOnClickListener() {
         with(binding) {
+            root.setOnClickListener {
+                hideKeyboard(it)
+            }
 
             btnLoginSignup.setOnClickListener {
                 val intent = Intent(this@LoginActivity, SignupActivity::class.java)

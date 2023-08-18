@@ -1,14 +1,11 @@
 package com.example.gosopt.feature.signup
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.lifecycle.Observer
-import com.example.gosopt.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.gosopt.databinding.ActivitySignupBinding
 import com.example.gosopt.feature.login.LoginActivity
+import com.example.gosopt.util.hideKeyboard
 import com.example.gosopt.util.snackbar
 import com.example.gosopt.util.toast
 
@@ -23,6 +20,10 @@ class SignupActivity : AppCompatActivity() {
 
     fun setOnClickListener() {
         with(binding) {
+            root.setOnClickListener {
+                hideKeyboard(it)
+            }
+
             btnSignupComplete.setOnClickListener {
                 val id = etSignupId.text.toString()
                 val pw = etSignupPw.text.toString()
@@ -45,7 +46,6 @@ class SignupActivity : AppCompatActivity() {
             }
         }
     }
-
 
 
 }
