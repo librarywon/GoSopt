@@ -23,4 +23,8 @@ class HomeActivity : AppCompatActivity() {
 
         return Pair(name, hobby)
     }
+
+    override fun onBackPressed() {
+        finishAffinity()  // 모든 액티비티 스택을 종료
+    }
 }

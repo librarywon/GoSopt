@@ -66,6 +66,7 @@ class LoginActivity : AppCompatActivity() {
                     val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                     saveLoginInfo()
                     startActivity(intent)
+                    finish()
                 } else {
                     toast("아이디와 비밀번호를 확인해주세요")
                 }
