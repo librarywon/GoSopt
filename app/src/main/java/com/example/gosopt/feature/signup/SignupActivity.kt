@@ -1,5 +1,6 @@
 package com.example.gosopt.feature.signup
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,10 +9,12 @@ import androidx.lifecycle.Observer
 import com.example.gosopt.R
 import com.example.gosopt.databinding.ActivitySignupBinding
 import com.example.gosopt.feature.login.LoginActivity
+import com.example.gosopt.util.snackbar
+import com.example.gosopt.util.toast
 
 class SignupActivity : AppCompatActivity() {
-    val binding by lazy { ActivitySignupBinding.inflate(layoutInflater) }
-    var viewModel = SignupViewModel()
+    private val binding by lazy { ActivitySignupBinding.inflate(layoutInflater) }
+    private val viewModel = SignupViewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -23,22 +26,26 @@ class SignupActivity : AppCompatActivity() {
             btnSignupComplete.setOnClickListener {
                 val id = etSignupId.text.toString()
                 val pw = etSignupPw.text.toString()
-                if(viewModel.checkId(id) and viewModel.checkPw(pw)) {
-                    toast("회원가입 완료")
+                val name = etSignupName.text.toString()
+                val hobby = etSignupHobby.text.toString()
+                if (viewModel.checkId(id) and viewModel.checkPw(pw)) {
+                    snackbar("회원가입 완료")
+
+                    // 회원가입 정보를 로그인 액티비티로 전달
                     val intent = Intent(this@SignupActivity, LoginActivity::class.java)
-                    intent.putExtra("id",id)
-                    intent.putExtra("pw",pw)
+                    intent.putExtra("id", id)
+                    intent.putExtra("pw", pw)
+                    intent.putExtra("name", name)
+                    intent.putExtra("hobby", hobby)
+
                     startActivity(intent)
-                }
-                else {
+                } else {
                     toast("아이디와 비밀번호를 확인해주세요")
                 }
             }
         }
     }
 
-    fun toast(text:String) {
-        Toast.makeText(this,text, Toast.LENGTH_SHORT).show()
-    }
+
 
 }

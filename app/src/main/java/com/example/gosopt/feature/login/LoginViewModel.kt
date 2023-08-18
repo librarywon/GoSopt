@@ -3,16 +3,13 @@ package com.example.gosopt.feature.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.gosopt.data.User
 
 class LoginViewModel : ViewModel() {
-    private val _id = MutableLiveData<String>()
-    val id : LiveData<String> get() = _id
+    private val _userInfo = MutableLiveData<User>()
+    val userInfo: LiveData<User> get() = _userInfo
 
-    private val _pw = MutableLiveData<String>()
-    val pw : LiveData<String> get() = _pw
-
-    fun login() {
-
+    fun setUserInfo(id: String, pw: String, name: String, hobby: String) {
+        _userInfo.value = User(id, pw, name, hobby)
     }
-
 }

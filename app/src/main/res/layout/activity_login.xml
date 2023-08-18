@@ -70,7 +70,8 @@
             android:id="@+id/et_login_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="pw를 입력하세요" />
+            android:hint="pw를 입력하세요"
+            android:inputType="text|textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
