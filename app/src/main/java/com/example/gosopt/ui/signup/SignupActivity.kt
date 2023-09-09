@@ -1,10 +1,10 @@
-package com.example.gosopt.feature.signup
+package com.example.gosopt.ui.feature.signup
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gosopt.databinding.ActivitySignupBinding
-import com.example.gosopt.feature.login.LoginActivity
+import com.example.gosopt.ui.feature.login.LoginActivity
 import com.example.gosopt.util.hideKeyboard
 import com.example.gosopt.util.snackbar
 import com.example.gosopt.util.toast

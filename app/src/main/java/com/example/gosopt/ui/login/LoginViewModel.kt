@@ -1,9 +1,9 @@
-package com.example.gosopt.feature.login
+package com.example.gosopt.ui.feature.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.gosopt.data.User
+import com.example.gosopt.data.model.User
 
 class LoginViewModel : ViewModel() {
     private val _userInfo = MutableLiveData<User>()
