@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gosopt.databinding.FragmentGitBinding
 import com.example.gosopt.ui.main.git.adapter.GitAdapter
@@ -32,16 +31,6 @@ class GitFragment : Fragment() {
         val adapter = GitAdapter()
         binding.rvGit.layoutManager = LinearLayoutManager(requireContext())
         binding.rvGit.adapter = adapter
-
-        viewModel.repos.observe(viewLifecycleOwner, Observer { repos ->
-            adapter.submitList(repos)
-        })
-
-        viewModel.fetchRepos("librarywon")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        adapter.submitList(viewModel.repoList)
     }
 }
