@@ -57,4 +57,17 @@ dependencies {
 
     //coil
     implementation("io.coil-kt:coil:1.4.0")
+
+    //serializaion
+    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+    implementation ("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+
+    //retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    //logging
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+
+    //gson
+    implementation("com.google.code.gson:gson:2.8.9")
 }
