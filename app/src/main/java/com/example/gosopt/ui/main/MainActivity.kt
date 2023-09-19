@@ -53,8 +53,21 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        binding.bnvMain.setOnItemReselectedListener { item ->
+            when (item.itemId) {
+                R.id.menu_git -> {
+                    scrollToTopOfCurrentFragment()
+                }
+            }
+        }
     }
 
+    private fun scrollToTopOfCurrentFragment() {
+        when (val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_main)) {
+            is GitFragment -> currentFragment.scrollToTop()
+        }
+    }
 
     private fun getUserInfo(): Pair<String?, String?> {
         val sharedPreferences = getSharedPreferences("LoginInfo", Context.MODE_PRIVATE)

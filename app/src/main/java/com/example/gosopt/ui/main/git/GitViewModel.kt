@@ -33,6 +33,30 @@ class GitViewModel : ViewModel() {
             "https://avatars.githubusercontent.com/u/66426967?v=4",
             "Naver",
             "librarywon"
+        ), Repo(
+            "https://avatars.githubusercontent.com/u/66426967?v=4",
+            "Naver",
+            "librarywon"
+        ), Repo(
+            "https://avatars.githubusercontent.com/u/66426967?v=4",
+            "Naver",
+            "librarywon"
+        ), Repo(
+            "https://avatars.githubusercontent.com/u/66426967?v=4",
+            "Naver",
+            "librarywon"
+        ), Repo(
+            "https://avatars.githubusercontent.com/u/66426967?v=4",
+            "Naver",
+            "librarywon"
+        ), Repo(
+            "https://avatars.githubusercontent.com/u/66426967?v=4",
+            "Naver",
+            "librarywon"
+        ), Repo(
+            "https://avatars.githubusercontent.com/u/66426967?v=4",
+            "Naver",
+            "librarywon"
         )
     )
 }

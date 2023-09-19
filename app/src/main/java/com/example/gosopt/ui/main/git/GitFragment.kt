@@ -33,4 +33,8 @@ class GitFragment : Fragment() {
         binding.rvGit.adapter = adapter
         adapter.submitList(viewModel.repoList)
     }
+
+    fun scrollToTop() {
+        binding.rvGit?.scrollToPosition(0)
+    }
 }
