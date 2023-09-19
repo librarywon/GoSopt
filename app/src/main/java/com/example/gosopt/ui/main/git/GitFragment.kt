@@ -35,6 +35,6 @@ class GitFragment : Fragment() {
     }
 
     fun scrollToTop() {
-        binding.rvGit?.scrollToPosition(0)
+        binding.rvGit?.smoothScrollToPosition(0)
     }
 }
