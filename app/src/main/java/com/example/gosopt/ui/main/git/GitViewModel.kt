@@ -1,10 +1,12 @@
 package com.example.gosopt.ui.main.git
 
 import androidx.lifecycle.ViewModel
-import com.example.gosopt.data.model.Repo
+import com.example.gosopt.data.model.GitItem
+import com.example.gosopt.data.model.GitItem.Repo
 
 class GitViewModel : ViewModel() {
-    val repoList = listOf<Repo>(
+    val repoList = listOf<GitItem>(
+        GitItem.Title("Jaewon Seo"),
         Repo(
             "https://avatars.githubusercontent.com/u/66426967?v=4",
             "Pophory",
