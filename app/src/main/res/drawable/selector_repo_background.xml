@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 선택된 상태일 때의 배경색 -->
+    <item android:drawable="@color/transparent_pink" android:state_activated="true" />
+    <!-- 기본 배경색 (선택되지 않은 상태) -->
+    <item android:drawable="@android:color/transparent" />
+</selector>

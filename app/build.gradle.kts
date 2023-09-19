@@ -72,4 +72,7 @@ dependencies {
 
     //gson
     implementation("com.google.code.gson:gson:2.8.9")
+
+    //selection
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
 }
