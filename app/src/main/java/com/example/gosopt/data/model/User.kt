@@ -1,4 +1,4 @@
-package com.example.gosopt.data
+package com.example.gosopt.data.model
 
 data class User(
     val id: String,

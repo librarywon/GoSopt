@@ -1,4 +1,4 @@
-package com.example.gosopt.feature.signup
+package com.example.gosopt.ui.feature.signup
 
 import androidx.lifecycle.ViewModel
 

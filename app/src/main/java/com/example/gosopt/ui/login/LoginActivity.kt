@@ -1,13 +1,14 @@
-package com.example.gosopt.feature.login
+package com.example.gosopt.ui.feature.login
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gosopt.data.User
+import com.example.gosopt.data.model.User
 import com.example.gosopt.databinding.ActivityLoginBinding
-import com.example.gosopt.feature.home.HomeActivity
-import com.example.gosopt.feature.signup.SignupActivity
+import com.example.gosopt.ui.feature.main.MainActivity
+import com.example.gosopt.ui.feature.signup.SignupActivity
+import com.example.gosopt.ui.main.home.HomeFragment
 import com.example.gosopt.util.hideKeyboard
 import com.example.gosopt.util.toast
 
@@ -31,21 +32,23 @@ class LoginActivity : AppCompatActivity() {
         val receivedName = intent.getStringExtra("name").toString()
         val receivedHobby = intent.getStringExtra("hobby").toString()
 
-        if(!intent.getStringExtra("id").isNullOrBlank()){
+        if (!intent.getStringExtra("id").isNullOrBlank()) {
             binding.etLoginId.setText(receivedId)
         }
 
         viewModel.setUserInfo(receivedId, receivedPw, receivedName, receivedHobby)
     }
+
     private fun autoLogin() {
         // 자동 로그인 처리
         val (id, pw) = getLoginInfo()
         if (id != null && pw != null) {
-            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
             intent.putExtra("id", id)
             startActivity(intent)
         }
     }
+
     private fun setOnClickListener() {
         with(binding) {
             root.setOnClickListener {
@@ -58,12 +61,12 @@ class LoginActivity : AppCompatActivity() {
             }
 
             btnLogin.setOnClickListener {
-                val id =viewModel.userInfo.value?.id
+                val id = viewModel.userInfo.value?.id
                 val pw = viewModel.userInfo.value?.pw
 
-                if (etLoginId.text.toString() == id &&  etLoginPw.text.toString() ==pw ) {
+                if (etLoginId.text.toString() == id && etLoginPw.text.toString() == pw) {
                     toast("로그인 성공")
-                    val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                    val intent = Intent(this@LoginActivity, HomeFragment::class.java)
                     saveLoginInfo()
                     startActivity(intent)
                     finish()
@@ -88,7 +91,7 @@ class LoginActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("LoginInfo", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
-        val userInfo = viewModel.userInfo.value ?: User("","","","")
+        val userInfo = viewModel.userInfo.value ?: User("", "", "", "")
 
         editor.putString("id", userInfo.id)
         editor.putString("pw", userInfo.pw)
